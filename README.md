@@ -64,15 +64,20 @@ Ne faites pas des graphiques au hasard. Chaque visuel doit répondre à une ques
 *   👉 **Faites un Nuage de Points** : Mettez la "Remise %" en bas (Axe X) et la "Marge" sur le côté (Axe Y). On verra tout de suite si les points sont bas !
 
 ### Question 2 : "Où sont nos meilleurs clients ?"
-*   *Le Marketing veut lancer une pub locale.*
-*   👉 **Faites une Carte** : Affichez les villes des clients. Plus la bulle est grosse, plus ils achètent.
+*   *Le Marketing veut cibler les clients VIP.*
+*   👉 **Faites une Segmentation ABC** : Créez une mesure dynamique qui classe les clients en "Or" (Top 20% du CA), "Argent" (30% suivants) et "Bronze" (Les autres). Affichez leur répartition.
 
 ### Question 3 : "Pourquoi les gens se plaignent ?"
 *   👉 **Analysez les Commentaires** : Affichez les produits qui ont le plus de commentaires.
 
+## Phase 5 : Analyse Expert (Pareto) - Le vrai test
+C'est ici que vous prouvez votre valeur. Le PDG veut optimiser le stock.
+*   **La Loi de Pareto (20/80)** : Identifiez les 20% de produits qui génèrent 80% du Chiffre d'Affaires.
+*   **Mise en application** : Créez une courbe de Pareto cumulée. Si on arrête de vendre les 50% de produits les moins performants, combien de CA perd-on ? (Réponse chiffrée attendue dans le rapport).
+
 ---
 
-## Phase 5 : Rendre le rapport "Sexy"
+## Phase 6 : Rendre le rapport "Sexy"
 Un rapport moche n'est pas lu.
 1.  **Navigation** : Créez une page d'accueil avec des boutons pour aller vers les détails.
 2.  **Mobile** : Créez la vue "Téléphone" pour que le PDG puisse regarder les chiffres dans l'ascenseur.
