@@ -1,93 +1,113 @@
-# Projet Power BI : QuickShop Live
+# Formation Power BI - Parcours Complet
 
-**Bienvenue dans l'équipe Data de QuickShop !** 🚀
+**4 projets pratiques pour maitriser Power BI de A a Z.**
 
-Vous êtes le nouveau Data Analyst d'une start-up e-commerce.
-**Votre mission :** Créer l'outil qui permettra au PDG de suivre les ventes en direct.
-Fini les fichiers Excel ! Vous allez connecter Power BI directement au "Cœur" du système (l'API).
-
----
-
-## Ce que vous allez apprendre
-Pas de théorie ici, que de la pratique. Vous allez :
-1.  **Récupérer des données réelles** (sans fichiers CSV !).
-2.  **Nettoyer des données complexes** (le vrai travail du Data Analyst).
-3.  **Créer des visuels utiles** pour répondre à des questions business.
+Chaque "Room" est un projet independant avec un scenario professionnel realiste.
+Pas de theorie. Que de la pratique. Vous apprenez en construisant.
 
 ---
 
-## Phase 1 : Récupérer les données
-Au lieu de télécharger des fichiers, vous allez utiliser le connecteur **Web** de Power BI.
-Voici les 4 adresses à copier-coller :
+## Les 4 Rooms
 
-### 1. Les Produits (Le Catalogue)
-*   **URL** : `https://dummyjson.com/products?limit=100` ('limit=100' sert à récupérer 100 produits).
-*   *Astuce* : Une fois chargé, cliquez sur "Convertir en Table".
-
-### 2. Les Clients
-*   **URL** : `https://dummyjson.com/users?limit=100`
-
-### 3. Les Avis Clients
-*   **URL** : `https://dummyjson.com/comments?limit=100`
-
-### 4. Les Commandes (Le Boss Final)
-*   **URL** : `https://dummyjson.com/carts?limit=50`
-*   ⚠️ **Attention** : Cette table est "imbriquée". Une commande contient PLUSIEURS produits.
-*   **Votre défi** : Trouver le bouton "Développer" (deux petites flèches) pour voir le détail de chaque produit vendu.
+| Room | Projet | Difficulte | Competences cles |
+|------|--------|-----------|-----------------|
+| [Room 1](Room_1_QuickShop/) | **QuickShop** - E-commerce | ** | Connecteur Web, ETL basique, DAX, Pareto |
+| [Room 2](Room_2_TaskFlow/) | **TaskFlow** - Productivite RH | *** | Multi-tables, Modele etoile, Scoring, Clustering |
+| [Room 3](Room_3_GlobeTrotter/) | **GlobeTrotter** - Marches internationaux | **** | JSON complexe, Cartes geo, HHI, Normalisation |
+| [Room 4](Room_4_CryptoWatch/) | **CryptoWatch** - Finance & Crypto | **** | Donnees temps reel, Heatmap, Risque, Volatilite |
 
 ---
 
-## Phase 2 : Organiser les données (Modélisation)
-Une fois les données chargées, n'essayez pas de tout mélanger.
-Créez des relations simples (Lier les tables entre elles avec la souris) :
-*   Le `productId` des Commandes va avec l'`id` des Produits.
-*   Le `userId` des Commandes va avec l'`id` des Clients.
+## Progression recommandee
 
-> **Règle d'or** : Une bonne relation forme un schéma en étoile (Les ventes au milieu, le reste autour).
-
----
-
-## Phase 3 : Créer les Indicateurs (DAX)
-Le PDG veut voir 4 chiffres clés en gros en haut de la page :
-1.  **Chiffre d'Affaires** (Total des ventes).
-2.  **Nombre de Commandes**.
-3.  **Panier Moyen** (Chiffre d'Affaires / Nombre de Commandes).
-4.  **Note Moyenne** (Moyenne des avis clients).
+```
+Room 1 (Debutant+)     -> Vous savez connecter, nettoyer, visualiser.
+    |
+Room 2 (Intermediaire)  -> Vous savez croiser des tables et scorer.
+    |
+Room 3 (Avance)         -> Vous savez manipuler du JSON complexe et des cartes.
+    |
+Room 4 (Avance+)        -> Vous savez analyser des marches financiers.
+```
 
 ---
 
-## Phase 4 : La Visualisation (Répondre aux problèmes)
-Ne faites pas des graphiques au hasard. Chaque visuel doit répondre à une question du PDG :
+## Structure de chaque Room
 
-### Question 1 : "Est-ce qu'on perd de l'argent avec les promos ?"
-*   *Le PDG pense qu'on remise trop.*
-*   👉 **Faites un Nuage de Points** : Mettez la "Remise %" en bas (Axe X) et la "Marge" sur le côté (Axe Y). On verra tout de suite si les points sont bas !
+```
+Room_X/
+    README.md                    <- Le sujet (consignes completes)
+    Solution_Guide/
+        GUIDE_ETL.md             <- Comment nettoyer les donnees (pas a pas)
+        SOLUTIONS_DAX.md         <- Formules DAX de base (copier-coller)
+        SOLUTIONS_DAX_EXPERT.md  <- Formules DAX avancees (defis)
+```
 
-### Question 2 : "Où sont nos meilleurs clients ?"
-*   *Le Marketing veut cibler les clients VIP.*
-*   👉 **Faites une Segmentation ABC** : Créez une mesure dynamique qui classe les clients en "Or" (Top 20% du CA), "Argent" (30% suivants) et "Bronze" (Les autres). Affichez leur répartition.
-
-### Question 3 : "Pourquoi les gens se plaignent ?"
-*   👉 **Analysez les Commentaires** : Affichez les produits qui ont le plus de commentaires.
-
-## Phase 5 : Analyse Expert (Pareto) - Le vrai test
-C'est ici que vous prouvez votre valeur. Le PDG veut optimiser le stock.
-*   **La Loi de Pareto (20/80)** : Identifiez les 20% de produits qui génèrent 80% du Chiffre d'Affaires.
-*   **Mise en application** : Créez une courbe de Pareto cumulée. Si on arrête de vendre les 50% de produits les moins performants, combien de CA perd-on ? (Réponse chiffrée attendue dans le rapport).
+> **Conseil prof :** Donnez le README aux eleves. Gardez le Solution_Guide pour vous (ou distribuez-le apres la seance).
 
 ---
 
-## Phase 6 : Rendre le rapport "Sexy"
-Un rapport moche n'est pas lu.
-1.  **Navigation** : Créez une page d'accueil avec des boutons pour aller vers les détails.
-2.  **Mobile** : Créez la vue "Téléphone" pour que le PDG puisse regarder les chiffres dans l'ascenseur.
-3.  **Images** : L'API vous donne les liens des images produits... affichez-les !
+## APIs utilisees (toutes gratuites, sans cle)
+
+| Room | API | URL de base |
+|------|-----|-------------|
+| 1 | DummyJSON | `https://dummyjson.com` |
+| 2 | JSONPlaceholder | `https://jsonplaceholder.typicode.com` |
+| 3 | REST Countries v3.1 | `https://restcountries.com/v3.1/all?fields=...` (max 10 champs par requete) |
+| 4 | CoinGecko | `https://api.coingecko.com/api/v3` |
 
 ---
 
-## Comment rendre votre travail ?
-1.  Enregistrez votre fichier sous `Nom_Prenom_QuickShop.pbix`
-2.  Déposez-le ici sur GitHub (ou envoyez-le selon les consignes du prof).
-3.  Préparez une démo de **5 minutes** pour présenter vos trouvailles au PDG.
+## Competences couvertes (par Room)
 
-**Bonne chance, l'équipe compte sur vous !**
+| Competence | R1 | R2 | R3 | R4 |
+|-----------|----|----|----|----|
+| Connecteur Web / API | x | x | x | x |
+| Power Query / ETL | x | x | xx | x |
+| JSON imbrique | x | - | xx | x |
+| Modelisation (relations) | x | xx | x | - |
+| DAX basique (SUM, COUNT, DIVIDE) | x | x | x | x |
+| DAX avance (RANKX, CALCULATE, VAR) | x | x | x | x |
+| Time Intelligence | x | - | - | - |
+| Mise en forme conditionnelle | - | x | - | xx |
+| Cartes geographiques | - | - | xx | - |
+| Treemap / Heatmap | - | x | - | x |
+| Nuage de points | x | x | x | x |
+| Segmentation / Scoring | x | xx | xx | xx |
+| Analyse de Pareto | xx | - | - | - |
+| Vue mobile | x | - | - | - |
+| Images depuis API | x | - | x | x |
+| Table manuelle | - | - | x | x |
+| Fusion de requetes (Merge) | - | - | x | - |
+
+---
+
+## Consignes generales
+
+### Pour tous les projets :
+1. **Nommez votre fichier** : `Nom_Prenom_NomDuProjet.pbix`
+2. **Creez une page d'accueil** avec navigation vers les autres pages.
+3. **Soignez le design** : Un rapport moche n'est pas lu.
+4. **Preparez une demo de 5 minutes** pour presenter vos resultats.
+
+### Evaluation :
+| Critere | Points |
+|---------|--------|
+| Donnees importees et nettoyees correctement | /5 |
+| Modelisation (relations, schema etoile) | /3 |
+| Mesures DAX fonctionnelles | /4 |
+| Visualisations pertinentes et lisibles | /4 |
+| Analyse expert (defis avances) | /2 |
+| Design et navigation | /2 |
+| **Total** | **/20** |
+
+---
+
+## Conseils pour reussir
+- **Sauvegardez souvent.** Power BI plante parfois.
+- **Testez vos mesures** sur un visuel simple (Carte) avant de les utiliser dans un graphique complexe.
+- **Google est votre ami** : Si une formule DAX ne marche pas, copiez l'erreur dans Google.
+- **Ne faites pas 15 visuels.** 5 bons visuels > 15 visuels moches.
+- **Racontez une histoire.** Chaque page doit repondre a une question precise.
+
+**Bonne formation !**

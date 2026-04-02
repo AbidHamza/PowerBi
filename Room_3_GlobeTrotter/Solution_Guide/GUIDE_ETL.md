@@ -1,11 +1,11 @@
 # Guide ETL - Room 3 : GlobeTrotter Analytics
 
 ## Etape 1 : Importer les pays
-1. Obtenir les donnees > Web > `https://restcountries.com/v3.1/all`
+1. Obtenir les donnees > Web > `https://restcountries.com/v3.1/all?fields=name,population,area,region,subregion,languages,currencies,flags,latlng,capital`
 2. Power BI affiche une liste de 250 Records.
 3. Cliquez sur **Vers la table** (To Table) > OK.
 4. Developpez la colonne principale (deux fleches).
-5. Vous verrez ~50 colonnes. **Ne paniquez pas.** On va nettoyer.
+5. Vous verrez 10 colonnes principales (grace au filtre fields dans l'URL).
 
 ## Etape 2 : Extraire le nom du pays
 1. La colonne name affiche "Record".
@@ -59,6 +59,14 @@ translations, demonyms, maps, gini, car, coatOfArms, postalCode, idd, tld, cca2,
 | Longitude | Nombre decimal | 2.0 |
 | capital | Texte | Paris |
 | borders | Texte/Liste | ESP,BEL,DEU... |
+
+## Etape 8b : Importer les frontieres (Source 2)
+1. Obtenir les donnees > Web > `https://restcountries.com/v3.1/all?fields=name,borders`
+2. Developpez name pour extraire common.
+3. Developpez borders (List) en texte separe par des virgules.
+4. **Fusionner** avec la table principale : Accueil > Fusionner des requetes.
+5. Cle de fusion : name_common (table principale) = name.common (table frontieres).
+6. Gardez la colonne borders de la fusion.
 
 ## Etape 9 : Creer la table Budget manuellement
 1. Accueil > Entrer des donnees.

@@ -16,12 +16,17 @@ Elle hesite entre l'Afrique, l'Asie et l'Amerique du Sud. A vous de trancher ave
 ---
 
 ## Phase 1 : Recuperer les donnees
-Cette fois, une seule URL mais BEAUCOUP de donnees imbriquees.
+L'API REST Countries limite a 10 champs par requete. On utilise donc **2 URLs**.
 
-### Source principale : Tous les pays du monde
-*   **URL** : `https://restcountries.com/v3.1/all`
-*   250+ pays avec : nom, population, superficie, region, sous-region, langues, monnaies, drapeaux, etc.
-*   Attention : Le JSON est tres imbrique. Chaque pays a des objets dans des objets.
+### Source 1 : Donnees principales (10 champs)
+*   **URL** : `https://restcountries.com/v3.1/all?fields=name,population,area,region,subregion,languages,currencies,flags,latlng,capital`
+*   250+ pays avec 10 champs : nom, population, superficie, region, sous-region, langues, monnaies, drapeaux, GPS, capitale.
+*   Le JSON reste imbrique (objets dans des objets) mais plus leger qu'avec tous les champs.
+
+### Source 2 : Frontieres des pays
+*   **URL** : `https://restcountries.com/v3.1/all?fields=name,borders`
+*   Les codes des pays frontaliers (utile pour Phase 5).
+*   Vous fusionnerez cette table avec la Source 1 dans Power Query via le nom du pays.
 
 ### Source complementaire : Indicateurs par region
 *   Pas d'API supplementaire. Vous allez **creer une table manuelle** dans Power BI :
